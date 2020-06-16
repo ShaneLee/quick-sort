@@ -7,10 +7,10 @@ python_result=$(python3 python/quick-sort.py ${test_arr[@]} 2>&1)
 test_sort() {
   result=$(eval "$1 ${test_arr[@]} 2>&1")
   if [ "$result" == "$expected" ]; then
-    echo "Test passed"
+    echo "$2 Test passed"
   else
-    echo "Test failed, expected $expected got: $result"
+    echo "$2 Test failed, expected $expected got: $result"
   fi
 }
 
-test_sort "python3 python/quick-sort.py"
+test_sort "python3 python/quick-sort.py" "Python"
